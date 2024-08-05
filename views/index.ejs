@@ -1,17 +1,27 @@
-<h1>Messages</h1>
-
-<% messages.map(message => { %>
-    <div class="message">
-        <div class="body">
-            <%= message.text %>
-        </div>
-        <div class="username">
-            <%= message.user %>
-        </div>
-        <div class="date">
-            <%= message.date %>
-        </div>
-    </div>
-<% }) %>
-
-<a href="/new">new message</a>
+<html>
+    <head>
+        <title>Message Board</title>
+        <link rel="stylesheet" type="text/css" href="/style.css">
+    </head>
+    <body>
+        <h1>Messages</h1>
+        
+        <% messages.map(message => { %>
+            <div class="message">
+                <div class="body">
+                    <%= message.text %>
+                </div>
+                <div class="username">
+                    <%= message.user %>
+                </div>
+                <div class="date">
+                    <%= message.date %>
+                </div>
+            </div>
+        <% }) %>
+        
+        <a href="/new">new message</a>
+        
+    </body>
+    
+</html>
