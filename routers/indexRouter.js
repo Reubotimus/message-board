@@ -1,9 +1,15 @@
 const express = require('express');
 const router = express.Router();
-const log = require('../controlers/indexController.js');
+const {addMessage, getMessages, getForm} = require('../controlers/indexController.js');
 
-router.use(log);
-router.get('/', (req, res) => res.send("hello"));
+
+// router.use(express.json())
+router.use(express.urlencoded({extended: false}))
+
+router.get('/new', getForm)
+router.post('/new', addMessage);
 router.post('/new', (req, res) => res.send("hello"));
+
+router.get('/', getMessages);
 
 module.exports = router;
